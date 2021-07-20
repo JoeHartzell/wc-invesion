@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  "include": ["src/**/*", "rollup.config.js"],
+  "exclude": ["node_modules/**"],
+  "compilerOptions": {
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "rootDir": "./src",
+      "outDir": "./dist"
+  }
+}

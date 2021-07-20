@@ -1,0 +1,26 @@
+{
+  "name": "di-context",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@tsconfig/svelte": "^2.0.0",
+    "rollup-plugin-bundle-size": "^1.0.3",
+    "svelte": "^3.0.0",
+    "svelte-check": "^2.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0"
+  },
+  "dependencies": {
+    "@material/mwc-button": "^0.22.1",
+    "faker": "^5.5.3",
+    "inversify": "^5.1.1",
+    "reflect-metadata": "^0.1.13",
+    "sirv-cli": "^1.0.0"
+  }
+}

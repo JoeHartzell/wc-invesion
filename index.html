@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- load webcomponents bundle, which includes all the necessary polyfills -->
+    <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script type="module" src="packages/components/dist/main.js"></script>
+
+    <!-- <script type="module" src="packages/di-context/dist/main.js"></script>
+    <script type="module" src="packages/my-element/dist/main.js"></script> -->
+    <title>Document</title>
+
+    <script defer type="module">
+        import { html, render } from 'lit-html';
+
+        const template = ({ name }) => html`
+            <di-container .name=${name}>
+                <div slot="top">
+                    <person-card></person-card>
+                    <person-card></person-card>
+                    <person-card></person-card>
+                    <person-link></person-link>
+                </div>
+
+                <div slot="bottom">
+                    <person-card></person-card>
+                    <person-card></person-card>
+                    <person-card></person-card>
+                    <person-link></person-link>
+                </div>
+            </di-container>
+        `;
+
+
+
+        let name = 'asdf'
+        const el = document.getElementById('blah')
+
+        render(template({ name }), el)
+
+        const button = document.getElementById('button')
+
+        button.onclick = () => {
+            render(template({ name: 'asdf2' }), el)
+        }
+    </script>
+</head>
+
+<body>
+    <button id="button">Change Name</button>
+    <div id="blah"></div>
+
+    <di-select>
+        <di-select-option id="1" value="asdf" slot="options"></di-select-option>
+        <di-select-option id="2" value="asdf2" slot="options"></di-select-option>
+    </di-select>
+</body>
+
+</html>
